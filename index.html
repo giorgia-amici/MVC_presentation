@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js -MVC</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+<a href="?transition=convex#/transitions">
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>MVC</h1>
+					<h3>From Design Pattern to AngularJS</h3>
+					<p>
+						<small>Created by Giorgia Amici <a href="https://github.com/giorgia-amici"></a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>MVC PATTERN</h2>
+					<p>
+					MVC is an <span style="color:#4285f4"> architectural design pattern </span> that encourages application organization through a <span style="color:#4285f4"> separation of concerns.</span>
+					<p class="fragment">
+				 It enforces the isolation of business data <span style="color:#4285f4">(Models)</span> from user interfaces <span style="color:#4285f4">(Views)</span> with a third component <span style="color:#4285f4">(Controllers)</span> traditionally managing logic and user-input. 
+					</p>
+				</section>
+
+				<section>
+					<h2>Confused?</h2>
+					<p class="fragment">MVC Restaurant</p>
+					<img id="customer" class="fragment" src="customerReal.jpg" width="500" title="ciao">
+					<img id="chef" class="fragment" src="chefram.jpg" width="300">
+					<img id="waiter" class="fragment"src="waiter.jpeg" width="200" height="270"><span class="fragment" id="thisController" >controller</span>
+				</section>
+
+				<section>
+					<section id="fragments">
+						<img class="myImgs" src="myan.png">
+						<p class="fragment">MVC**</p>
+						<p class="fragment">Google</p>
+						<p class="fragment">Light weight</p>
+						<p class="fragment">V 1.3.x</p>					
+					</section>
+					</section>
+
+					<section id="transitions">
+					<h2 style="color:#dd1b16"> For the Comunity Support</h2>
+					<p class="fragment"> FOSS </p>
+					<p class="fragment"><a href="https://angularjs.org/">In-house team at Google </a>
+					</p>
+						<p class="fragment"><a href="https://www.youtube.com/user/angularjs">Comunity and Conferences</a>
+					</p>
+					
+					<p class="fragment">  </p>
+					</section>
+
+					<section id ="transitions">
+					<h2 style="color:#dd1b16"> For Productivity </h2>	
+					<p class="fragment"> Gulp or Grunt </p>
+					<p class="fragment"> Karma-Jasmine & E2E Protractor</p>
+					<p class="fragment"> 80% less code than with jQuery on same functionality </p>
+					<p class="fragment"> bower & npm for dependency injection management</p>
+
+				</section>
+				<section id="transitions">
+				<h2 style="color:#dd1b16"> For Interest</h2>
+				<img id="interest" src="compare.png">
+				</section>
+				<section id="transitions">
+					<h2> <a href="http://plnkr.co/"> Let's begin</a></h2>			
+				</section>
+	
+				<section id="themes">
+					<h2>ng-app</h2>
+					<p class="fragment">
+						app.js <br>
+					</p>
+					<p class="fragment">
+						ng-app<br>
+					</p>
+				</section>
+				<section>
+					<h2 class="gio">app.js</h2>
+					<pre><code data-trim contenteditable class="fragment">
+var myApp = angular.module('myAppName', []);
+					</code></pre>
+					<h6 class="gio fragment">in your HTML</h6>
+					<pre><code data-trim contenteditable class="fragment">
+<script src="path_to/app.js"></script>
+					</code></pre>
+					<h6 class="gio fragment">&</h6>
+					<pre><code data-trim contenteditable class="fragment">
+				<div id="main-container" ng-app="myAppName"></div>
+					</code></pre>
+
+				</section>
+
+				<section>
+					
+						<h2 class="gio">ng-controller</h2>
+						<p class="fragment">
+							controllerName_spec.js
+						</p>
+						<p class="fragment">
+							controllerName.js
+						</p>
+						<p class="fragment">
+							ng-controllerName in html
+						</p>
+
+					</section>
+
+
+
+				<section>
+					<h2 class="gio">myController.js</h2>
+					<pre><code data-trim contenteditable class="fragment">
+angular.module('myAppName').controller('myController', 
+	function($scope){
+	$scope.name = "Giorgia";
+});
+					</code></pre>
+					<p class="fragment"> in your HTML </p>
+					<pre><code data-trim contenteditable class="fragment">
+<script src="path_to/myController_controller.js"></script>
+					</code></pre>
+
+					<p class="fragment"> &</p>
+					<pre><code data-trim contenteditable class="fragment">
+<div ng-controller="myController"> 
+	<p class="printMyName"> {{name}} </p>
+</div>
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h2>Most common services</h2>
+					<ul>
+						<li>$http</li>
+						<li>$resource</li>
+						<li>$inject</li>
+						<li>$mock </li>
+					</ul>
+				</section>
+
+
+<!-- 				<section>
+					<h2>Other MVCs </h2>
+					<img src="mvcjs.png">
+				</section> -->
+			<section>
+					<h2 class="gio">myService.js</h2>
+					<pre><code data-trim contenteditable class="fragment">
+angular.module('myController').factory('myService', function($http){
+	
+}); 
+
+
+					</code></pre>
+					<p class="fragment"> Before I continue...</p>
+					<pre><code data-trim contenteditable class="fragment">
+angular.module('myAppName').factory('myService', function($http){
+	return {
+		getNamesFromSomewhere: function(){
+		return $http.get()
+		}
+	}
+}); 
+					</code></pre>
+		<p class="fragment"> in your HTML </p>
+					<pre><code data-trim contenteditable class="fragment">
+<script src="path_to/myService_service.js"></script>
+</code></pre>
+					</section></p>
+
+					<section>
+					<h2>INJECT YOUR SERVICE</h2>
+					<pre><code data-trim contenteditable class="fragment">
+angular.module('myController').controller('myController', 
+	function($scope, myService){
+	$scope.name = "giorgia"
+	myService.getNamesFromSomewhere().then();
+});
+					</code></pre>
+				</section>
+
+					<section>
+					<h2 id="transitions">File Structure</h2>		
+					<img id="filestructure" src="file_structure.png" width="50%">
+	
+				</section>
+
+									<section>
+					<h2 id="transitions"> Other MVC </h2>		
+					<img id="mvc" src="mvcJs.png">
+	
+				</section>
+													<section>
+					<h2 id="transitions"> sources </h2>		
+					<p><a href="https://angularjs.org/">Angular Official Documentation</a></p>
+					<p><a href="https://docs.angularjs.org/api/ng/function/angular.module">Angular Official Documentation on Module</a>
+					</p>
+					<p> <a href="http://codebrief.com/2012/01/the-top-10-javascript-mvc-frameworks-reviewed/"> MVC Frameworks reviews</a></p>
+					<p> <a href="https://scotch.io/tag/angular-js"> ScotchIO</a></p>
+					<p> <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/"> JS Design Patterns</a></p>
+				
+
+
+	
+				</section>
+					<section>	
+					<img id="thx" src="secondT.jpeg" width="50%">
+	
+				</section>
+
+				</section></div></div>
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
