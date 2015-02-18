@@ -2,7 +2,7 @@
 
 This topic was presented at MA on Tuesday 17th of February 2015.
 
-Since this presentation has been realised using reveal.js, to have it run it in your browser, clone this repo locally and then from your terminal (inside the repo) just type:
+Since this presentation has been realised using reveal.js, to have it running it in your browser, ```clone``` this repo locally and then from your __terminal__ (inside the repo) just type:
 ```
 open index.html
 ```
